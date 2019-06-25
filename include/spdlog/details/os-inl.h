@@ -146,6 +146,12 @@ SPDLOG_INLINE bool fopen_s(FILE **fp, const filename_t &filename, const filename
         prevent_child_fd(*fp);
     }
 #endif
+	
+#ifdef HZ_DEBUG
+    Log_fopen(*fp, (filename.c_str()), mode.c_str(), __FILE__, __LINE__);
+#elif defined(HZ_RELEASE)
+    Log_fopen(*fp, (filename.c_str()));
+#endif
     return *fp == nullptr;
 }
 

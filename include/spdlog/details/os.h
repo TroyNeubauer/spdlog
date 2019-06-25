@@ -6,6 +6,13 @@
 #include "spdlog/common.h"
 #include <ctime> // std::time_t
 
+////============================================================================================
+// CHANGE MADE BY Troy
+// Added so that Hazel can track all files that are opened
+// Added on 6/24/2019
+////============================================================================================
+#include "FileTrackerFunctions.h"
+
 namespace spdlog {
 namespace details {
 namespace os {

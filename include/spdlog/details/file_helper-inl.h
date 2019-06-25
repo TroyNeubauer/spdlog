@@ -16,6 +16,14 @@
 #include <thread>
 #include <tuple>
 
+////============================================================================================
+// CHANGE MADE BY Troy
+// Added so that Hazel can track all files that are opened
+// Added on 6/24/2019
+////============================================================================================
+#include "FileTrackerFunctions.h"
+
+
 namespace spdlog {
 namespace details {
 
@@ -60,7 +68,7 @@ SPDLOG_INLINE void file_helper::close()
 {
     if (fd_ != nullptr)
     {
-        std::fclose(fd_);
+        fclose(fd_);
         fd_ = nullptr;
     }
 }
